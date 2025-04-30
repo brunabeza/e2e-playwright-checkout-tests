@@ -1,16 +1,15 @@
-import { defineConfig } from '@playwright/test';
+// playwright.config.js
+import { defineConfig } from '@playwright/test'
 
 export default defineConfig({
-  use: {
-      baseURL: 'https://www.saucedemo.com',
-  },
   testDir: './tests',
   timeout: 30000,
   retries: 1,
-  reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
+  reporter: [['html', { open: 'never' }]], 
   use: {
     headless: true,
     viewport: { width: 1280, height: 720 },
     actionTimeout: 10000,
+    baseURL: 'https://www.saucedemo.com',
   },
-});
+})

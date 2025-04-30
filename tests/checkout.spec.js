@@ -1,23 +1,29 @@
-const { test } = require('@playwright/test');
-const { LoginPage } = require('../pages/LoginPage');
-const { ProductPage } = require('../pages/ProductPage');
-const { CartPage } = require('../pages/CartPage');
-const { CheckoutPage } = require('../pages/CheckoutPage');
-const { ConfirmationPage } = require('../pages/ConfirmationPage');
+const { test, expect } = require('@playwright/test')
+import { LoginPage } from '../pages-object/login/login.page'
+import { ProductPage } from '../pages-object/product/produtc.pages'
+import { CheckoutPage } from '../pages-object/checkout/checkout.page'
 
-test('deve completar um fluxo de compra com sucesso', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  const productPage = new ProductPage(page);
-  const cartPage = new CartPage(page);
-  const checkoutPage = new CheckoutPage(page);
-  const confirmationPage = new ConfirmationPage(page);
+const { UserCollectionData } = require('../data/users/users.data')
 
-  await loginPage.goto();
-  await loginPage.login('standard_user', 'secret_sauce');
-  await productPage.addProductToCart();
-  await productPage.goToCart();
-  await cartPage.checkout();
-  await checkoutPage.fillCheckoutForm('João', 'Silva', '12345');
-  await checkoutPage.finishPurchase();
-  await confirmationPage.assertOrderComplete();
-});
+test('Should be able a successful checkout', async ({ page }) => {
+
+  const loginPage = new LoginPage(page)
+  const validUser = UserCollectionData.find(user => user.userType === 'valid-user')
+  const productPage = new ProductPage(page)
+  const checkoutPage = new CheckoutPage(page)
+  
+  await loginPage.login(validUser.username, validUser.password)
+  
+  await productPage.addProductsToCart()
+  await productPage.goToCart()
+  await expect(page.getByText('Your Cart')).toBeVisible()
+  
+  await checkoutPage.checkout()
+  await expect(page.getByText('Checkout: Overview')).toBeVisible()
+  await checkoutPage.finish()
+  
+  await expect(page.getByText('Checkout: Complete!')).toBeVisible()
+  await expect(page.getByText('Thank you for your order!')).toBeVisible()
+  
+
+})
