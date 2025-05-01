@@ -1,29 +1,28 @@
-const { test, expect } = require('@playwright/test')
+import { test, expect } from '@playwright/test'
 import { LoginPage } from '../pages-object/login/login.page'
 import { ProductPage } from '../pages-object/product/produtc.pages'
 import { CheckoutPage } from '../pages-object/checkout/checkout.page'
+import { ProductCollectionData } from '../data/product/product.data.js'
 
-const { UserCollectionData } = require('../data/users/users.data')
-
-test('Should be able a successful checkout', async ({ page }) => {
-
+test('Should complete the checkout process successfully', async ({ page }) => {
+  
   const loginPage = new LoginPage(page)
-  const validUser = UserCollectionData.find(user => user.userType === 'valid-user')
   const productPage = new ProductPage(page)
   const checkoutPage = new CheckoutPage(page)
-  
-  await loginPage.login(validUser.username, validUser.password)
-  
+
+  await loginPage.login()
+
   await productPage.addProductsToCart()
   await productPage.goToCart()
-  await expect(page.getByText('Your Cart')).toBeVisible()
-  
-  await checkoutPage.checkout()
-  await expect(page.getByText('Checkout: Overview')).toBeVisible()
-  await checkoutPage.finish()
+
+  for (const product of ProductCollectionData) {
+    await expect(page.getByText(product.name)).toBeVisible();
+  }
+
+  await checkoutPage.fillCheckoutForm()
+
+  await checkoutPage.completeCheckout()
   
   await expect(page.getByText('Checkout: Complete!')).toBeVisible()
   await expect(page.getByText('Thank you for your order!')).toBeVisible()
-  
-
 })

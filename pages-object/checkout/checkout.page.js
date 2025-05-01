@@ -1,4 +1,5 @@
 import { checkoutMappings } from './checkout.mappings'
+import { CheckoutCollectionData } from '../../data/checkout/checkout.data.js'
   export class CheckoutPage {
     constructor(page) {
       this.page = page
@@ -10,15 +11,17 @@ import { checkoutMappings } from './checkout.mappings'
       this.finishButton = page.locator(checkoutMappings.finishButton)
     }
   
-    async checkout() {
-        await this.checkoutButton.click()
-        await this.firstNameInput.fill('John')
-        await this.lastNameInput.fill('Doe')
-        await this.postalCodeInput.fill('12345')
-        await this.continueButton.click()
-      }
+    async fillCheckoutForm() {
+      const checkoutData = CheckoutCollectionData[0]
   
-    async finish() {
+      await this.checkoutButton.click()
+      await this.firstNameInput.fill(checkoutData.firstName)
+      await this.lastNameInput.fill(checkoutData.lastName)
+      await this.postalCodeInput.fill(checkoutData.postalCode)
+      await this.continueButton.click()
+    }
+  
+    async completeCheckout() {
         await this.finishButton.click()
     }
   }

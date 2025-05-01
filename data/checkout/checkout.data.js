@@ -1,5 +1,5 @@
 module.exports = {
-    PurchaseCollectionData: [
+    CheckoutCollectionData: [
         {
             firstName:"John",
             lastName:"Doe",

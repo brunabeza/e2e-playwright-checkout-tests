@@ -4,11 +4,7 @@ E2E EComerce is a full-stack e-commerce application built with Node.js, Express,
 
 ## Features
 
-* User authentication with username and password
-* Product catalog with details and images
-* Cart management with adding and removing products
 * Checkout process with payment processing
-* Product reviews and ratings
 
 ## Structure
 
@@ -34,9 +30,7 @@ The project is structured as follows:
 ## Requirements
 
 * Node.js 14+
-* MongoDB 4+
-* Express 4+
-* EJS 3+
+* Playwright
 
 ## Installation
 
@@ -49,16 +43,10 @@ The project is structured as follows:
 1. Install Playwright: `npm install playwright`
 2. Run tests: `npm test`
 
-## Deployment
-
-1. Create a MongoDB Atlas cluster
-2. Create a GitHub Actions workflow file
-3. Push the code to GitHub
-4. Configure the GitHub Actions workflow to deploy the application to Vercel
 
 ## Authors
 
-* Bruno Beza
+* Bruna Beza
 
 ## License
 
