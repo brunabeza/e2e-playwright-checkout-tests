@@ -1,4 +1,4 @@
-name: Run E2E, API and Mobile Tests
+name: Run E2E Tests and Publish Report
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
   pull_request:
     branches:
       - main
+      
       - develop
 
 permissions:
@@ -84,7 +85,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `### 📊 Relatório Playwright\n\n[Visualizar Relatório Playwright](${reportUrl})`
+              body: `### 📊 Playwright Test E2E Report\n\n[View Playwright Report](${reportUrl})`
             });
         
         
