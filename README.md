@@ -29,28 +29,10 @@ This project implements end-to-end (E2E) tests using [Playwright](https://playwr
 
 ### 1. Clone the repository
 
-<<<<<<< HEAD
 ```bash
 git clone https://github.com/your-username/e2eecomerce.git
 cd e2eecomerce
 ```
-=======
-* `data/`: Directory containing data files for different parts of the application.
-	+ `users.data.js`: Data file for the user schema.
-	+ `products.data.js`: Data file for the product schema.
-* `pages-object/`: Directory containing page object files for different parts of the application.
-	+ `login/`: Directory containing page object files for the login feature.
-		- `login.mappings.js`: Page object file for the login mappings.
-		- `login.page.js`: Page object file for the login page.
-	+ `product/`: Directory containing page object files for the product feature.
-		- `product.mappings.js`: Page object file for the product mappings.
-		- `product.page.js`: Page object file for the product page.
-	+ `checkout/`: Directory containing page object files for the checkout feature.
-		- `checkout.mappings.js`: Page object file for the checkout mappings.
-		- `checkout.page.js`: Page object file for the checkout page.
-* `tests/`: Directory containing test files for different parts of the application.
-	+ `checkout.spec.js`: Test file for the checkout feature.
->>>>>>> 25493c81e95dcbb19ebf4ff4b9b62b5a68ccc56e
 
 ### 2. Install dependencies
 
