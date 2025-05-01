@@ -13,7 +13,6 @@ The project is structured as follows:
 * `data/`: Directory containing data files for different parts of the application.
 	+ `users.data.js`: Data file for the user schema.
 	+ `products.data.js`: Data file for the product schema.
-	+ `orders.data.js`: Data file for the order schema.
 * `pages-object/`: Directory containing page object files for different parts of the application.
 	+ `login/`: Directory containing page object files for the login feature.
 		- `login.mappings.js`: Page object file for the login mappings.
