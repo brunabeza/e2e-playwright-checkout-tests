@@ -5,11 +5,11 @@ export default defineConfig({
   testDir: './tests',
   timeout: 30000,
   retries: 1,
-  reporter: [['html', { open: 'never' }]], 
+  reporter: [['html', { open: 'on-failure' }]], 
   use: {
     headless: true,
     viewport: { width: 1280, height: 720 },
     actionTimeout: 10000,
-    baseURL: 'https://www.saucedemo.com',
+    baseURL: process.env.TEST_BASE_URL || 'https://www.saucedemo.com',
   },
 })

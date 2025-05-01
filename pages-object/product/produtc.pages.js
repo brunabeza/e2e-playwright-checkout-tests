@@ -1,14 +1,17 @@
 import { productMappings } from './product.mappings.js'
+import { ProductCollectionData } from '../../data/product/product.data.js'
+
 export class ProductPage {
   constructor(page) {
     this.page = page
     this.addBackPackCartButton = page.locator(productMappings.addBackPackCartButton)
-    this.addTShirtCartButton = page.locator(productMappings.addTShirtCartButton)
+    this.addJacketCartButton = page.locator(productMappings.addJacketCartButton)
   }
 
   async addProductsToCart() {
-    await this.addBackPackCartButton.click()
-    await this.addTShirtCartButton.click()
+    for (const product of ProductCollectionData) {
+      await this.page.locator(product.selector).click()
+    }
   }
 
   async goToCart() {
