@@ -1,6 +1,6 @@
 # E2E Ecommerce Checkout Tests with Playwright
 
-This project implements end-to-end (E2E) tests using [Playwright](https://playwright.dev/) to automate a complete checkout process on an ecommerce platform (https://www.saucedemo.com). It follows the Page Object Model (POM) to promote code reuse and maintainability.
+This project implements end-to-end (E2E) tests using [Playwright](https://playwright.dev/) to automate a complete checkout process on an e-commerce platform (https://www.saucedemo.com). It follows the Page Object Model (POM) to promote code reuse and maintainability.
 
 ## 📁 Project Structure
 
@@ -61,6 +61,10 @@ npm run test:report
 Evidence from the test report:
 ![image](https://github.com/user-attachments/assets/5e9e1cb2-a1d4-46f3-af95-2f69ae5dbdec)
 
+In the Pull request, when the test finishes its execution, you can access the report:
+![image](https://github.com/user-attachments/assets/6a3993cd-39d2-4c14-8c71-0f8250db442f)
+
+
 ### 6. Debug mode
 
 ```bash
@@ -90,7 +94,7 @@ npm run test:debug
 
 Tests are automatically triggered by GitHub Actions via `.github/workflows/e2e.yml`.
 
-Evidence from github action:
+Evidence from GitHub Action:
 ![image](https://github.com/user-attachments/assets/14178d55-209c-4746-86e6-943342c19403)
 ![image](https://github.com/user-attachments/assets/b64261f5-f3c5-4ffa-affc-0187f98497d9)
 ![image](https://github.com/user-attachments/assets/ffec3450-1f0d-4c2f-b48b-78bc10c71af9)
