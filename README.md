@@ -58,6 +58,9 @@ npm run test:headed
 npm run test:report
 ```
 
+Evidence from the test report:
+![image](https://github.com/user-attachments/assets/5e9e1cb2-a1d4-46f3-af95-2f69ae5dbdec)
+
 ### 6. Debug mode
 
 ```bash
@@ -86,6 +89,11 @@ npm run test:debug
 ## ✅ CI Integration
 
 Tests are automatically triggered by GitHub Actions via `.github/workflows/e2e.yml`.
+
+Evidence from github action:
+![image](https://github.com/user-attachments/assets/14178d55-209c-4746-86e6-943342c19403)
+![image](https://github.com/user-attachments/assets/b64261f5-f3c5-4ffa-affc-0187f98497d9)
+![image](https://github.com/user-attachments/assets/ffec3450-1f0d-4c2f-b48b-78bc10c71af9)
 
 ## 👩‍💻 Author
 
