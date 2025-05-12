@@ -1,8 +1,8 @@
-import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker'
 
 export function generateCheckoutData() {
-  const firstName = faker.person.firstName();
-  const lastName = faker.person.lastName();
+  const firstName = faker.person.firstName()
+  const lastName = faker.person.lastName()
 
   return {
     firstName,
@@ -17,5 +17,5 @@ export function generateCheckoutData() {
       state: faker.location.state(),
       zip: faker.location.zipCode(),
     },
-  };
+  }
 }
