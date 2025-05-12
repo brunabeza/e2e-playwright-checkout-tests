@@ -8,11 +8,19 @@
     "test:headed": "npx playwright test --headed",
     "test:report": "npx playwright show-report",
     "test:debug": "npx playwright test --debug"
-  },  
-  "keywords": ["playwright", "testes e2e", "automação", "checkout"],
+  },
+  "keywords": [
+    "playwright",
+    "testes e2e",
+    "automação",
+    "checkout"
+  ],
   "author": "Bruna Beza da Silva Gonçalves",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.52.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.7.0"
   }
 }

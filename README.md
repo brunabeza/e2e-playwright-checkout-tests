@@ -30,8 +30,8 @@ This project implements end-to-end (E2E) tests using [Playwright](https://playwr
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/e2eecomerce.git
-cd e2eecomerce
+git clone https://github.com/brunabeza/e2e-playwright-checkout-tests
+cd e2e-playwright-checkout-tests
 ```
 
 ### 2. Install dependencies
@@ -99,10 +99,7 @@ Evidence from GitHub Action:
 ![image](https://github.com/user-attachments/assets/b64261f5-f3c5-4ffa-affc-0187f98497d9)
 ![image](https://github.com/user-attachments/assets/ffec3450-1f0d-4c2f-b48b-78bc10c71af9)
 
-## 👩‍💻 Author
+## 📬 Contact
 
-Bruna Beza da Silva Gonçalves
-
-## 📄 License
-
-This project is licensed under the ISC License.
+Developed by **@brunabeza**  
+[LinkedIn](https://www.linkedin.com/in/brunabeza)
